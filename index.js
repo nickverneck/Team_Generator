@@ -164,22 +164,26 @@ addMember = (role) => {
 
 renderCard = (data) => {
     var thirdItem;
+    var icon;
     switch (data.getRole()) {
         case 'Manager':
-            thirdItem = `Office Number: ${data.officeNumber}`
+            icon = `<i class="bi bi-briefcase text-light"></i>`;
+            thirdItem = `Office Number: ${data.officeNumber}`;
             break
         case 'Intern':
-            thirdItem = `School: ${data.school}`
+            icon = `<i class="bi bi-linkedin text-light"></i>`
+            thirdItem = `School: ${data.school}`;
             break
         case 'Engineer':
-            thirdItem = `GitHub: ${data.gitHub}`
+            icon = `<i class="bi bi-puzzle text-light"></i>`
+            thirdItem = `GitHub: ${data.gitHub}`;
             break
     }
     htmlCards += `<div class="col">
     <div class="card bg-grey" style="width: 18rem;">
         <div class="card-body bg-dark">
             <h4 class="card-title text-light">${data.name}</h4>
-            <h4 class="card-text text-light">${data.getRole()}</h4>
+            <h4 class="card-text text-light">${icon} ${data.getRole()}</h4>
         </div>
         <ul class="list-group list-group-flush p-3">
             <li class="list-group-item">ID: ${data.id}</li>
